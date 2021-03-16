@@ -1,0 +1,48 @@
+***Update 0.0.1***
+  **__Added:__**
+    - NodeJS Application
+    - Entry point for application
+  **__Changed:__**
+    - 0
+  **__Bugs:__**
+    - 0 Found
+    - 0 Fixed
+
+***Update 0.0.2***
+  **__Added:__**
+    - xero-node library
+    - XERO Client
+    - Starting point for XERO connection
+    - Callback for XERO authentication
+    - Redirect for successful connection
+  **__Changed:__**
+    - XERO starting point from starting immediately on launching app to manual start on endpoint '/start'
+  **__Bugs:__**
+    - 0 Found
+    - 0 Fixed
+
+***Update 0.0.3***
+  **__Added:__**
+    - react library
+    - Client folder
+    - Components/CSS/Layout/Pages folders and files
+    - Responsive Navbar and footer
+  **__Changed:__**
+    - Changed Server port from 3000 => 5000
+  **__Bugs:__**
+    - 1 Found:
+      - Services Dropdown has a small area in which the hover does not work as intended
+    - 0 Fixed
+
+***Update 0.0.4***
+  **__Added:__**
+    - Home/About/Contact/Support page contents
+    - Heroku connection and deployment for dev
+    - ScrollToTop.js for scroll to top button
+    - Links in Footer.js
+  **__Changed:__**
+    - 0
+  **__Bugs:__**
+    - 1 Found:
+      - Services Dropdown on Mobile doesn't close when item is clicked
+    - 0 Fixed
