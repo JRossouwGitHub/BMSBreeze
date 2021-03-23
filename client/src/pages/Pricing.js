@@ -10,6 +10,7 @@ import TableRow from '@material-ui/core/TableRow';
 import {Typography} from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom'
+import MobilePricing from '../components/MobilePricing'
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -44,7 +45,7 @@ const StyledTableCell = withStyles((theme) => ({
 
   const rows2 = [
     createData('Additional Training', '| Hourly rate for extra training', '$75 ', 'per hour'),
-    createData('Consulting Free', '| Hourly rate for requested work', '$100 ', 'per hour'),
+    createData('Consulting Fee', '| Hourly rate for requested work', '$100 ', 'per hour'),
     createData('Intergration', '| Cost of intergration from previous platform or new data', '$120 ', 'each'),
   ];
   
@@ -67,7 +68,8 @@ const Pricing = () => {
                     Plans
                     {!isMobile ? (<><br /><br /></>) : null}
             </Typography>
-            <TableContainer style={{display: 'block', width: '75%', margin: '0 auto', color: '#0094FF'}}>
+            {!isMobile ? (<>
+              <TableContainer style={{display: 'block', width: '75%', margin: '0 auto', color: '#0094FF'}}>
                 <Table className={classes.table} aria-label="customized table" style={{border: '2px solid #0094FF'}}>
                     <TableHead>
                         <TableRow style={{border: '2px solid #0094FF'}}>
@@ -142,6 +144,9 @@ const Pricing = () => {
                     <i>*All prices are valid until xx/xx/xxxx and are represented in AUD.</i>
                     <br /><br /><br />
             </Typography>
+            </>) : (<>
+              <MobilePricing />
+            </>)}
         </div>
     )
 }

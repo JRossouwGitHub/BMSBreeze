@@ -231,3 +231,52 @@ fieldset{
 .FormGroup{
     border: 2px solid #0094FF;
 }
+
+.basic,.standard,.premium{
+    font-size: 18px;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 3%;
+    text-align: left;
+    color: #0094FF;
+    border: 1px solid #0094FF;
+}
+
+.show{
+    display: block;
+    visibility: visible;
+}
+
+.hide{
+    display: none;
+    visibility: hidden;
+}
+
+.plans-mobile-button{
+    width: 33.333%;
+    height: auto;
+    padding: 3%;
+    border-radius: 0px;
+    color: #0094FF;
+    border: 1px solid #0094FF;
+    border-top: 2px solid #0094FF;
+    border-bottom: 2px solid #0094FF;
+    background-color: white;
+}
+
+.plans-mobile-button.active{
+    width: 33%;
+    height: auto;
+    padding: 3%;
+    border-radius: 0px;
+    color: white;
+    background-color: #0094FF;
+    border: 1px solid #0094FF;
+    border-top: 2px solid #0094FF;
+    border-bottom: 2px solid #0094FF;
+    font-weight: bold;
+}
+
+.plans-mobile-button-inline{
+    display: inline;
+}
