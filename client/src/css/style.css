@@ -53,6 +53,7 @@ html, body{
     padding-bottom: 2.5%;
     padding-left: 5%;
     padding-right: 2.5%;
+    z-index: 2;
 }
 
 .navlink-dropdown:hover{

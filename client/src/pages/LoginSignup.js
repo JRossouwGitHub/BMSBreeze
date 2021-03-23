@@ -53,7 +53,7 @@ const LoginSignup = () => {
                     </Button>
                     {!isMobile ? (<>
                         <div>
-                            <Link className={classes.link} to='/'>Make a new account</Link>
+                            <Link className={classes.link} to='/make-new-account'>Make a new account</Link>
                             <div style={{float: 'right'}}>
                                 <Link className={classes.link} to='/'>Forgot password?</Link>
                             </div>
@@ -74,7 +74,7 @@ const LoginSignup = () => {
                             </Button>
                             <br /><br />
                             <Button variant="outlined" color="primary" className={classes.button}>
-                                <Link className={classes.link} to='/'>Make Account</Link>
+                                <Link className={classes.link} to='/make-new-account'>Make Account</Link>
                             </Button>
                         </div>
                         <br /><br />

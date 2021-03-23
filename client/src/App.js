@@ -17,6 +17,7 @@ import TermsConditions from './pages/TermsConditions'
 import PlanBasic from './pages/PlanBasic'
 import PlanStandard from './pages/PlanStandard'
 import PlanPremium from './pages/PlanPremium'
+import MakeAccount from './pages/MakeAccount'
 
 const App = () => {
     return (
@@ -43,6 +44,7 @@ const App = () => {
                             <Route path='/buy-basic' component={PlanBasic} />
                             <Route path='/buy-standard' component={PlanStandard} />
                             <Route path='/buy-premium' component={PlanPremium} />
+                            <Route path='/make-new-account' component={MakeAccount} />
                         </>
                         <Footer />
                     </LinkToTop>

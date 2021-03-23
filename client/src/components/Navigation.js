@@ -58,12 +58,15 @@ const useStyles = makeStyles((theme) => ({
     dropdown: {
         '&:hover': {
             backgroundColor: "#0094FF",
-            color: "white"
+            color: "white",
+            zIndex: 99,
         },
         paddingTop: '0',
         paddingBottom: '0',
         paddingLeft: '0',
         border: '1px solid #0094FF',
+        zIndex: 2,
+        backgroundColor: "white",
     },
     nested: {
         paddingLeft: theme.spacing(4),
