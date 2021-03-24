@@ -18,6 +18,12 @@ const useStyles = makeStyles((theme) => ({
       margin: 'auto',
       flexGrow: 1,
     },
+    rootMobile: {
+        display: 'block',
+        width: '100%',
+        margin: 'auto',
+        flexGrow: 1,
+      },
     button: {
       marginRight: '0',
     },
@@ -111,8 +117,8 @@ const MakeAccount = () => {
 
     return (
         
-        <div className={classes.root}>
-            <Typography variant={!isMobile ? "h2" : "h3"} color="primary" className="desc-body2">
+        <div className={!isMobile ? classes.root : classes.rootMobile}>
+            <Typography variant={!isMobile ? "h2" : "h4"} color="primary" className="desc-body2">
                 Create a BMS Breeze account
                 {!isMobile ? (<><br /></>) : null}
             </Typography>
@@ -135,8 +141,8 @@ const MakeAccount = () => {
             </Stepper>
             <div>
             {activeStep === steps.length ? (
-                <div>
-                    <Typography variant="h2" color="primary" className="desc-body2">
+                <div style={{marginLeft: '3%', marginRight: '3%'}}>
+                    <Typography variant={isMobile ? "h4" : "h2"} color="primary" className="desc-body2">
                         DONE!
                     </Typography>
                     <br /><br /><br />
@@ -163,8 +169,8 @@ const MakeAccount = () => {
                 </div>
             ) : (
                 <div>
-                <div className={classes.instructions} style={{display: 'block', width: '50%', margin: 'auto'}}>{getStepContent(activeStep)}</div>
-                <div style={{display: 'block', width: '50%', margin: 'auto'}}>
+                <div className={classes.instructions} style={!isMobile ? {display: 'block', width: '50%', margin: 'auto'} : {display: 'block', width: '80%', margin: 'auto'}}>{getStepContent(activeStep)}</div>
+                <div style={!isMobile ? {display: 'block', width: '50%', margin: 'auto'} : {display: 'block', width: '80%', margin: 'auto'}}>
                     <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button} variant="contained" color="secondary">
                         Back
                     </Button>
@@ -174,6 +180,7 @@ const MakeAccount = () => {
                         color="primary"
                         onClick={handleSkip}
                         className={classes.button}
+                        style={{marginLeft: '3%'}}
                     >
                         Skip
                     </Button>
@@ -184,7 +191,7 @@ const MakeAccount = () => {
                     color="primary"
                     onClick={handleNext}
                     className={classes.button}
-                    style={{float: 'right'}}
+                    style={!isMobile ? {float: 'right'} : {marginLeft: '3%'}}
                     >
                     {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                     </Button>

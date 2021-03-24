@@ -2,12 +2,17 @@ import React, {useState} from 'react'
 import TextField from '@material-ui/core/TextField';
 import { Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
+import { useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const VerifyAccount = () => {
     const [code, setCode] = useState('')
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     return (
         <div>
-            <Typography variant="h4" color="primary" className="desc-body2">
+            <Typography variant={isMobile ? "h5" : "h4"} color="primary" className="desc-body2">
                 A verification code was sent to your email, please enter your code below:
             </Typography>
             <br />

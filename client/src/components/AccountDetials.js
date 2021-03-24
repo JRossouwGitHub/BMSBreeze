@@ -1,11 +1,10 @@
 import React, {useState} from 'react'
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
@@ -47,7 +46,9 @@ const AccountDetials = () => {
 
     const [fName, setFName] = useState('')
     const [lName, setLName] = useState('')
-    const [business, setBusiness] = useState('')
+    const [businessName, setBusinessName] = useState('')
+    const [businessNumber, setBusinessNumber] = useState('')
+    const [businessGST, setBusinessGST] = useState('')
     const [website, setWebsite] = useState('')
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
@@ -64,6 +65,8 @@ const AccountDetials = () => {
     const [country, setCountry] = useState('')
 
     const classes = useStyles();
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
         <div>
@@ -96,12 +99,38 @@ const AccountDetials = () => {
                 <TextField
                     required
                     id="outlined"
-                    label="Business Name"
-                    placeholder="Business Name"
+                    label="Registered Business Name"
+                    placeholder="Registered Business Name"
                     variant="outlined"
                     color="primary"
-                    value={business}
-                    onChange={() => setBusiness(event.target.value)}
+                    value={businessName}
+                    onChange={() => setBusinessName(event.target.value)}
+                    size="small"
+                    className={classes.input}
+                />
+                <br />
+                <TextField
+                    required
+                    id="outlined"
+                    label="Registered Business Number"
+                    placeholder="Registered Business Number"
+                    variant="outlined"
+                    color="primary"
+                    value={businessNumber}
+                    onChange={() => setBusinessNumber(event.target.value)}
+                    size="small"
+                    className={classes.input}
+                />
+                <br />
+                <TextField
+                    required
+                    id="outlined"
+                    label="Business GST Number"
+                    placeholder="Business GST Number"
+                    variant="outlined"
+                    color="primary"
+                    value={businessGST}
+                    onChange={() => setBusinessGST(event.target.value)}
                     size="small"
                     className={classes.input}
                 />
@@ -296,7 +325,7 @@ const AccountDetials = () => {
                             color="primary"
                         />
                         }
-                        label={<label>I am the owner of the business stated in the above form and assume all legal responisibility <Link className="navlink-mobile2" to='/' target="_blank"><strong>read more.</strong></Link></label>}
+                        label={<label style={isMobile ? {fontSize: '14px'} : null}>I am the owner of the business stated in the above form and assume all legal responisibility <Link className="navlink-mobile2" to='/' target="_blank"><strong>read more.</strong></Link></label>}
                     />
                     <FormControlLabel
                         control={
@@ -307,7 +336,7 @@ const AccountDetials = () => {
                             color="primary"
                         />
                         }
-                        label={<lable>I am of legal age and rights to proceed in doing business in my Country <Link className="navlink-mobile2" to='/' target="_blank"><strong>read more.</strong></Link></lable>}
+                        label={<lable style={isMobile ? {fontSize: '14px'} : null}>I am of legal age and rights to proceed in doing business in my Country <Link className="navlink-mobile2" to='/' target="_blank"><strong>read more.</strong></Link></lable>}
                     />
                     <FormControlLabel
                         control={
@@ -318,7 +347,7 @@ const AccountDetials = () => {
                             color="primary"
                         />
                         }
-                        label={<label>I understand that the account I am about to create is the Administration account and will be used as such <Link className="navlink-mobile2" to='/' target="_blank"><strong>read more.</strong></Link></label>}
+                        label={<label style={isMobile ? {fontSize: '14px'} : null}>I understand that the account I am about to create is the Administration account and will be used as such <Link className="navlink-mobile2" to='/' target="_blank"><strong>read more.</strong></Link></label>}
                     />
                     <FormControlLabel
                         control={
@@ -329,7 +358,7 @@ const AccountDetials = () => {
                             color="primary"
                         />
                         }
-                        label={<lable>I have read and accept the <Link className="navlink-mobile2" to='/terms-conditions' target="_blank"><strong>Terms {'&'} Conditions</strong></Link> for using BMS Breeze.</lable>}
+                        label={<lable style={isMobile ? {fontSize: '14px'} : null}>I have read and accept the <Link className="navlink-mobile2" to='/terms-conditions' target="_blank"><strong>Terms {'&'} Conditions</strong></Link> for using BMS Breeze.</lable>}
                     />
                 </FormGroup>
                 <br />
